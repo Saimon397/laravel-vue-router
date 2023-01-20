@@ -1,5 +1,5 @@
 <template>
-    <div class="cards">
+    <div class="cards mt-5">
         <CardComponent v-for="(project, index) in projects" :key="index" :project="project"></CardComponent>
     </div>
 </template>
@@ -31,5 +31,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.cards {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
 </style>
