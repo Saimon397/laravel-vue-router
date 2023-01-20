@@ -10,7 +10,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item" v-for="(item, index) in NavItems" :key="index">
+            <li class="nav-item hover-underline-animation" v-for="(item, index) in NavItems" :key="index">
               <router-link :to="{ name: item.routeName }" active-class="active" class="nav-link">
                 {{ item.label }}
               </router-link>
@@ -65,13 +65,27 @@ header {
   color: rgb(248, 94, 11);
 }
 
-a {
-  color: rgb(248, 94, 11);
-  font-size: 20px;
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
 
-  &:hover {
-    color: rgb(211, 83, 15) !important;
-    border-bottom: 2px solid;
-  }
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 5px;
+  left: 0;
+  background-color: rgb(255, 167, 0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 </style>
