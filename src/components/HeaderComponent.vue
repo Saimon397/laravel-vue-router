@@ -64,4 +64,14 @@ header {
 .color-brand {
   color: rgb(248, 94, 11);
 }
+
+a {
+  color: rgb(248, 94, 11);
+  font-size: 20px;
+
+  &:hover {
+    color: rgb(211, 83, 15) !important;
+    border-bottom: 2px solid;
+  }
+}
 </style>
