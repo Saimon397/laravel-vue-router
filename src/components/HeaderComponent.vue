@@ -2,7 +2,8 @@
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <img class="my-logo" src="../../public/img/logoboolfolio.png" alt="">
+        <a class="navbar-brand fs-2 fw-bold color-brand me-5" href="#">BoolFolio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -51,5 +52,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+header {
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(216, 210, 210);
+}
 
+.my-logo {
+  width: 100px;
+}
+
+.color-brand {
+  color: rgb(248, 94, 11);
+}
 </style>
