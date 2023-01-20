@@ -1,19 +1,15 @@
 <template>
-    <div class="container mt-5" v-if="project">
-        <div class="row g-4">
-            <div class="col-4 d-flex justify-content-center align-items-center">
-                <div class="container card-box">
-                    <img :src="`${store.imageBasePath}${project.cover_image}`" class="card-img-top" :alt="project.name">
-                    <div>{{ project.name }}</div>
-                    <div>{{ project.diff_lvl }}</div>
-                    <div v-for="language in project.languages">{{ language.name }}</div>
-                    <div>{{ project.framework }}</div>
-                    <div>{{ project.team }}</div>
-                    <div>{{ project.git_link }}</div>
-                    <div>{{ project.description }}</div>
-                    <div class="fw-bold">Workflow: {{ project.type.workflow }}</div>
-                </div>
-            </div>
+    <div class="d-flex justify-content-center align-items-center mt-5" v-if="project">
+        <div class="my-card-single">
+            <img :src="`${store.imageBasePath}${project.cover_image}`" class="card-img-top" :alt="project.name">
+            <div class="my-text mt-5">Name:&ensp;{{ project.name }}</div>
+            <div class="my-text">Difficulty:&ensp;{{ project.diff_lvl }}</div>
+            <div class="my-text" v-for="language in project.languages">Languages:&ensp;{{ language.name }}</div>
+            <div class="my-text">Framework:&ensp;{{ project.framework }}</div>
+            <div class="my-text">Team:&ensp;{{ project.team }}</div>
+            <div class="my-text">Link:&ensp;{{ project.git_link }}</div>
+            <div class="my-text">Description:&ensp;{{ project.description }}</div>
+            <div class="my-text">Workflow:&ensp;{{ project.type.workflow }}</div>
         </div>
     </div>
     <div v-else>
@@ -51,5 +47,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.my-card-single {
+    width: 600px;
+    padding: 30px 40px;
+    margin: 20px 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 1px 1px 1px rgb(230, 227, 227);
 
+    img {
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+.my-text {
+    margin-top: 10px;
+    font-size: 30px;
+}
 </style>
